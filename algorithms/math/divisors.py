@@ -25,7 +25,7 @@ class divisors:
         return result
 
     def oddFactorsSum(self, n):
-        divs = self.evenFactors(n)
+        divs = self.oddFactors(n)
         return sum(divs)
 
     def evenFactors(self, n):
