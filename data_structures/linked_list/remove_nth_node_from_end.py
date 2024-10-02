@@ -6,17 +6,20 @@ class Node():
 
 
 def remove(head, n):
-    res = head
-    slow = head
-    fast = head
-
-    for i in range(n+1):
+    extra = Node(0)
+    extra.next = head
+    fast = extra
+    slow = extra
+    for _ in range(n):
         fast = fast.next
-    while fast:
+
+    while fast.next:
         fast = fast.next
         slow = slow.next
+
     slow.next = slow.next.next
-    return res
+
+    return extra.next
 
 def print_list(head):
     curr = head
@@ -30,7 +33,7 @@ head.next.next = Node(3)
 head.next.next.next = Node(4)
 head.next.next.next.next = Node(5)
 print_list(head)
-remove(head, 2)
+head = remove(head, 5)
 print_list(head)
 
 
