@@ -5,7 +5,7 @@ def product(arr):
 
     for i in range(len(arr)):
         prods[i] = temp
-        temp = temp * prods[i]
+        temp = temp * arr[i]
 
     temp = 1
 
